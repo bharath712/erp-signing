@@ -16,6 +16,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with: 
           browser: chrome
+          env: true
         env: 
            CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
            CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
