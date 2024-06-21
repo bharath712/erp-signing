@@ -1,0 +1,23 @@
+{
+    "name": "ERP SINGING",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "cy:run": " cypress run --spec cypress/e2e"
+    },
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "author": "Bharath Battini",
+    "license": "ISC",
+    "bugs": {
+        "url": ""
+    },
+    "homepage": "",
+    "dependencies": {
+        "cypress": "^13.10.0"
+    }
+}
