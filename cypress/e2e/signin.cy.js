@@ -11,12 +11,9 @@ describe('template spec', () => {
 
     cy.visit('/');
 
-
   });
 
-
   it('Login in ERP for checkin', () => {
-
 
     cy.get('#login_email').type(Cypress.env('USERNAME'));
     cy.get('#login_password').type(Cypress.env('PASSWORD'));
