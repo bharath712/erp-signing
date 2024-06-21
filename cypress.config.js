@@ -2,6 +2,7 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   watchForFileChanges: false,
+  video: true,
   e2e: {
 
     baseUrl: 'https://erp.atriina.com/login#login',
