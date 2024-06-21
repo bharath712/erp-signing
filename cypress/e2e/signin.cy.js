@@ -14,8 +14,8 @@ describe('template spec', () => {
   });
 
   it('Login in ERP for checkin', () => {
-
-    cy.get('#login_email').type(Cypress.env('USERNAME'));
+    cy.log(Cypress.env('USERNAME')),
+      cy.get('#login_email').type(Cypress.env('USERNAME'));
     cy.get('#login_password').type(Cypress.env('PASSWORD'), { log: false });
     cy.get('[type="submit"]').contains('Login').click();
     cy.get('#navbar-search').type('Employee Check');
