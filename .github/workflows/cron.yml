@@ -9,6 +9,10 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
+      
+      - name: Secrets Username
+        run: echo "My Secret Username is ${{ secrets.CYPRESS_USERNAME }}"
+        
       - name: Checkout
         uses: actions/checkout@v3
 
@@ -20,3 +24,5 @@ jobs:
         env: 
            CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
            CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
+    
+
