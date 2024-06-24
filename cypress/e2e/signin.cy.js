@@ -21,8 +21,8 @@ describe('template spec', () => {
     cy.get('#navbar-search').type('Employee Check');
     cy.get('#awesomplete_list_1').children().first().click();
     cy.get('[data-label="Add Employee Checkin"]').click();
-    cy.get('select[data-fieldtype="Select"]').select('OUT');
-    // cy.get('[data-label="Save"]').click();
+    cy.get('select[data-fieldtype="Select"]').select('IN');
+    cy.get('[data-label="Save"]').click();
 
   });
 })
