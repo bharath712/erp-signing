@@ -23,5 +23,7 @@ jobs:
         env: 
            CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
            CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
+           CYPRESS_NIKHILUSERNAME: ${{ secrets.CYPRESS_NIKHILUSERNAME }}
+           CYPRESS_NIKHILPASSWORD: ${{ secrets.CYPRESS_NIKHILPASSWORD }}
     
 

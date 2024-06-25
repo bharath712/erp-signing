@@ -11,6 +11,8 @@ module.exports = defineConfig({
 
       USERNAME: process.env.CYPRESS_USERNAME,
       PASSWORD: process.env.CYPRESS_PASSWORD,
+      NIKHILUSERNAME: process.env.CYPRESS_NIKHILUSERNAME,
+      NIKHILPASSWORD: process.env.CYPRESS_NIKHILPASSWORD
     },
 
     setupNodeEvents(on, config) {
