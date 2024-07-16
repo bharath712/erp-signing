@@ -4,6 +4,7 @@ module.exports = defineConfig({
   projectId: 'nk45uk',
   watchForFileChanges: false,
   video: true,
+  retries: 1,
   e2e: {
 
     baseUrl: 'https://erp.atriina.com/login#login',
@@ -12,7 +13,8 @@ module.exports = defineConfig({
       USERNAME: process.env.CYPRESS_USERNAME,
       PASSWORD: process.env.CYPRESS_PASSWORD,
       NIKHILUSERNAME: process.env.CYPRESS_NIKHILUSERNAME,
-      NIKHILPASSWORD: process.env.CYPRESS_NIKHILPASSWORD
+      NIKHILPASSWORD: process.env.CYPRESS_NIKHILPASSWORD,
+
     },
 
     setupNodeEvents(on, config) {
