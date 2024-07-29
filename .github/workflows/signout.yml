@@ -1,4 +1,4 @@
-name: Check in cron job at 10 am
+name: Check out cron job at 8 pm
 
 on:
   schedule:
