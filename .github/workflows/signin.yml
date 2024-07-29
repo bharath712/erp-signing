@@ -1,0 +1,30 @@
+name: Check in cron job at 10 am
+
+on:
+  schedule:
+    - cron: '23 4 * * 1-5'
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      
+      - name: Secrets Username
+        run: echo "My Secret Username is ${{ secrets.CYPRESS_USERNAME }}"
+        
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cypress run 🧪
+        uses: cypress-io/github-action@v6
+        with:
+          spec: cypress/e2e/signin.cy.js
+          browser: chrome
+          env: true
+        env: 
+           CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
+           CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
+           CYPRESS_NIKHILUSERNAME: ${{ secrets.CYPRESS_NIKHILUSERNAME }}
+           CYPRESS_NIKHILPASSWORD: ${{ secrets.CYPRESS_NIKHILPASSWORD }}
+    
+
