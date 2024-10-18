@@ -25,7 +25,7 @@ describe('CheckIn using ERP Portal', () => {
     cy.get('#awesomplete_list_1').children().first().click();
     cy.get('[data-label="Add Employee Checkin"]').click();
     cy.get('div.awesomplete > input[type="text"][data-doctype="Employee Checkin"]')
-      .type('HR-EMP-00068{enter}')
+      .type('HR-EMP-00068{enter}');
     cy.get('select[data-fieldtype="Select"]').select('IN');
     cy.get('[data-label="Save"]').click();
 
