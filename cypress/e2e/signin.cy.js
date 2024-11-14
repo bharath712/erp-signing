@@ -19,14 +19,13 @@ describe('CheckIn using ERP Portal', () => {
     cy.get('[type="submit"]')
       .contains('Login').click();
 
-    cy.get('#navbar-search')
-      .clear()
-      .type('Employee Check');
-    cy.get('#awesomplete_list_1').children().first().click();
+    cy.get('a[title="HR"]').click();
+    cy.get('a[title="HR"]').click();
+    cy.get('a[title="Employee Checkin"]').click();
     cy.get('[data-label="Add Employee Checkin"]').click();
     cy.get('div.awesomplete > input[type="text"][data-doctype="Employee Checkin"]')
-      .type('HR-EMP-00068{enter}');
-    cy.get('select[data-fieldtype="Select"]').select('IN');
+      .type('HR-EMP-00068{enter}')
+    cy.get('select[data-fieldname="log_type"]').select('IN');
     cy.get('[data-label="Save"]').click();
 
   });
