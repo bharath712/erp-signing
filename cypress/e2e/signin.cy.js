@@ -18,15 +18,18 @@ describe('CheckIn using ERP Portal', () => {
     cy.get('#login_password').type(Cypress.env('PASSWORD'), { log: false });
     cy.get('[type="submit"]')
       .contains('Login').click();
-
-    cy.get('a[title="HR"]').click();
     cy.get('a[title="HR"]').click();
     cy.get('a[title="Employee Checkin"]').click();
     cy.get('[data-label="Add Employee Checkin"]').click();
-    cy.get('div.awesomplete > input[type="text"][data-doctype="Employee Checkin"]')
-      .type('HR-EMP-00068{enter}')
     cy.get('select[data-fieldname="log_type"]').select('IN');
-    cy.get('[data-label="Save"]').click();
+    cy.get('.indicator-pill.no-indicator-dot.whitespace-nowrap').then($element => {
+
+      cy.wrap($element).should('have.text', 'Not Saved');
+      cy.get('[data-label="Save"]').click();
+
+      cy.wrap($element).should('have.text', 'Draft');
+
+    });
 
   });
 

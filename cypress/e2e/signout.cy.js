@@ -20,13 +20,17 @@ describe('CheckIn using ERP Portal', () => {
             .contains('Login').click();
 
         cy.get('a[title="HR"]').click();
-        cy.get('a[title="HR"]').click();
-        cy.get('a[title="Employee Checkin"]').click();
-        cy.get('[data-label="Add Employee Checkin"]').click();
-        cy.get('div.awesomplete > input[type="text"][data-doctype="Employee Checkin"]')
-            .type('HR-EMP-00068{enter}')
-        cy.get('select[data-fieldname="log_type"]').select('OUT');
-        cy.get('[data-label="Save"]').click();
+        cy.get('a[title="Employee Checkin"]').click(); //Click on Employee Checkin Option from HR
+        cy.get('[data-label="Add Employee Checkin"]').click(); //Click on Add Employee Checkin Button
+        cy.get('select[data-fieldname="log_type"]').select('OUT'); //Click on OUT
+        cy.get('.indicator-pill.no-indicator-dot.whitespace-nowrap').then($element => {
+
+            cy.wrap($element).should('have.text', 'Not Saved');
+            cy.get('[data-label="Save"]').click();
+
+            cy.wrap($element).should('have.text', 'Draft');
+
+        });
 
     });
 
